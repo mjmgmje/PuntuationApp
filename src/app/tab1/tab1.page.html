@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="Bookman">Biblioteca de alejandria</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+    <!-- <div class="headerbooks light-bg">
+    <ion-text class="text-white"> Libros de la semana </ion-text>
+  </div> -->
+    <div class="container-fluid">
+        <div class="row books">
+            <div
+                class="col-6 book border"
+                *ngFor="let book of books; index as i"
+                tappable
+                (click)="viewDetail(book.id)"
+                margin-bottom
+            >
+                <div *ngIf="i%2 == 0">
+                    <div class="bookinside left">
+                        <!-- <div class="background-filter rlt"> -->
+                        <img
+                            src="{{ book.Thumb }}"
+                            class="paddingb10"
+                        >
+                        <!-- <div class="align-bottom" padding-left padding-right> -->
+                        <h6 class="text-center font-weight-bold pt-1 Title">{{ book.Title }}</h6>
+                    </div>
+                </div>
+                <div *ngIf="i%2 == 1">
+                    <div class="bookinside right">
+                        <!-- <div class="background-filter rlt"> -->
+                        <img
+                            src="{{ book.Thumb }}"
+                            class="paddingb10"
+                        >
+                        <!-- <div class="align-bottom" padding-left padding-right> -->
+                        <h6 class="text-center font-weight-bold pt-1 Title">{{ book.Title }}</h6>
+                    </div>
+                </div>
+                <!-- </div>
+        </div> -->
+            </div>
+        </div>
+    </div>
+    <ion-fab
+        vertical="bottom"
+        horizontal="end"
+        slot="fixed"
+    >
+        <ion-fab-button
+            tappable
+            (click)="GoToAddBook()"
+            class="fab-btn-orange"
+        >
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

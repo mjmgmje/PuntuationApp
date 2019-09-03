@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button
+                defaultHref="/tabs/tab1"
+                icon="ios-arrow-back"
+            ></ion-back-button>
+        </ion-buttons>
+        <ion-title>Libro</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+    <div class="innerdiv">
+        <form [formGroup]="FormBook" (ngSubmit)="addBook(FormBook.value)">
+        <ion-input
+            formControlName="Title"
+            name="Title"
+            class="Title text-center"
+            value="{{ Title }}"
+            placeholder="Titulo del Libro"
+        ></ion-input>
+        <div *ngIf="thumb !== ''; else addImage"> 
+          <ion-img
+                class="image-right mr-2"
+                src="{{ thumb }}"
+          ></ion-img>
+        </div>
+        <ng-template #addImage>
+          <div class="Imagesize mr-2 text-center">
+            <button (click)="addThumb()" class="btn btn-orange">Añade una foto</button>
+          </div>
+        </ng-template>
+
+        <div id="percentage" class="c100 ml-3 mt-3 orange {{ classPValue }}">
+            <input formControlName="PValue"
+            name="PValue" id="valuePercentage" (keydown.enter)="ChangeValue($event)" value='{{ classValue }}'>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+        </div>
+
+        <textarea formControlName="Description"
+        name="Description" placeholder="Añade aqui tu opinion del Libro..." value="{{ Description }}"></textarea>
+        <div class="text-center">
+            <button class="btn btn-orange" type="submit"><ion-icon name="save"></ion-icon>Guardar</button> 
+        </div>
+    </form>
+    </div>
+    
+</ion-content>

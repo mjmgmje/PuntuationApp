@@ -1,0 +1,71 @@
+ion-content.background{
+    --background: url(./../../assets/images/662399.png) 0 0/100% 100% no-repeat;
+  }
+  .headergames {
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  .games {
+    justify-content: center;
+  
+    .card {
+      border-radius: 1rem;
+    }
+    .game {
+      overflow: hidden;
+      padding-right: 0px;
+      padding-left: 0px;
+      margin-bottom: 0px;
+      border: 0px !important;
+  
+      .gameinside.left{
+        padding-left: 30px;
+        padding-right: 0px;
+      }
+      .gameinside.right{
+        padding-left: 0px;
+        padding-right: 30px;
+      }
+      .gameinside{
+          
+          padding-top: 20px;
+  
+          img{
+            max-width: 80%;
+            margin-left: 10%;
+          }
+          .paddingb10{
+              padding-bottom: 10px;
+          }
+      }
+      .background {
+        background-size: 100% auto;
+        background-position: center;
+  
+        .background-filter {
+          height: 8rem;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.65)
+          );
+  
+          .align-bottom {
+            width: 100%;
+  
+            h6 {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  

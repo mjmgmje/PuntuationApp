@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="Bookman">
+      El tesoro de Nathan Drake
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+<div class="container-fluid">
+    <div class="row games">
+      <div
+        class="col-6 game border"
+        *ngFor="let game of games; index as i"
+        tappable
+        (click)="viewDetail(game.id)"
+        margin-bottom
+      >
+        <div *ngIf="i%2 == 0">
+          <div class="gameinside left" >
+            <!-- <div class="background-filter rlt"> -->
+            <img src="{{ game.Thumb }}" class="paddingb10" />
+            <!-- <div class="align-bottom" padding-left padding-right> -->
+              <h6 class="text-center font-weight-bold pt-1 white">{{ game.Title }}</h6>
+          </div>
+        </div>
+        <div *ngIf="i%2 == 1">
+          <div class="gameinside right" >
+            <!-- <div class="background-filter rlt"> -->
+            <img src="{{ game.Thumb }}" class="paddingb10" />
+            <!-- <div class="align-bottom" padding-left padding-right> -->
+              <h6 class="text-center font-weight-bold pt-1 white">{{ game.name }}</h6>
+          </div>
+        </div>
+        <!-- </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+<ion-fab
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+  >
+    <ion-fab-button class="fab-btn-green" tappable (click)="GoToAddGame()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  </ion-content>

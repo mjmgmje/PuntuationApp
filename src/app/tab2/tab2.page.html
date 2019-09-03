@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="Bookman">
+      La filmoteca de los Lumiere
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+<div class="container-fluid">
+    <div class="row movies">
+      <div
+        class="col-6 movie border"
+        *ngFor="let movie of movies; index as i"
+        tappable
+        (click)="viewDetail(movie.id)"
+        margin-bottom
+      >
+        <div *ngIf="i%2 == 0">
+          <div class="movieinside left" >
+            <!-- <div class="background-filter rlt"> -->
+            <img src="{{ movie.Thumb }}" class="paddingb10" />
+            <!-- <div class="align-bottom" padding-left padding-right> -->
+              <h6 class="text-center font-weight-bold pt-1 white">{{ movie.Title }}</h6>
+          </div>
+        </div>
+        <div *ngIf="i%2 == 1">
+          <div class="movieinside right" >
+            <!-- <div class="background-filter rlt"> -->
+            <img src="{{ movie.Thumb }}" class="paddingb10" />
+            <!-- <div class="align-bottom" padding-left padding-right> -->
+              <h6 class="text-center font-weight-bold pt-1 white">{{ movie.Title }}</h6>
+          </div>
+        </div>
+        <!-- </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+<ion-fab
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+  >
+    <ion-fab-button tappable (click)="GoToAddMovie()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
